@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF895B7"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:textColor="#FFFFFF"
+                android:hint="Search"
+                android:textSize="20dp"
+                android:background="@drawable/custom_edittext" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lv_content">
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/search2"
+                android:background="#FFF56194"
+                android:id="@+id/btn_search"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:background="#FFF56194"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/stype"
+                android:id="@+id/btn_stype"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFF56194"
+                android:src="@drawable/ic_favorite_black_24dp"
+                android:id="@+id/btn_love"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
