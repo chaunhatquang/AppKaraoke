@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tiniha.karaoke.Database.SQLDataSource;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -32,11 +33,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private Button gmailButton;
     private LoginButton facebookButton;
     private CallbackManager callbackManager;
+
+    SQLDataSource db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
+
+        db=new SQLDataSource(this);
+
         callbackManager = CallbackManager.Factory.create();
         facebookButton = (LoginButton)findViewById(R.id.btnfacebook);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
