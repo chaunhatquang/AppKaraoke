@@ -11,14 +11,20 @@ public class KaraokeModel {
     private String _name_vn;
     private String lyric;
     private String lyric_vn;
+    private String anthor_info;
 
-    public KaraokeModel(int _code, String short_name, String _name, String _name_vn, String lyric, String lyric_vn) {
+
+
+
+
+    public KaraokeModel() {
         this._code = _code;
         this.short_name = short_name;
         this._name = _name;
         this._name_vn = _name_vn;
         this.lyric = lyric;
         this.lyric_vn = lyric_vn;
+        this.anthor_info=anthor_info;
     }
 
     public int get_code() {
@@ -67,5 +73,12 @@ public class KaraokeModel {
 
     public void setLyric_vn(String lyric_vn) {
         this.lyric_vn = lyric_vn;
+    }
+    public void setAnthor_info(String anthor_info) {
+        this.anthor_info = anthor_info;
+    }
+
+    public String getAnthor_info() {
+        return anthor_info;
     }
 }
