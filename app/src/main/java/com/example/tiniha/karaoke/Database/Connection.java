@@ -16,8 +16,8 @@ import java.io.OutputStream;
  * Created by Tini Ha on 10/6/2016.
  */
 public class Connection extends SQLiteOpenHelper{
-    private static String DB_PATH = "com.example.tiniha.karaoke/databases/";
-    private static String DB_NAME = "V49.sqlite";
+    private static final String DB_PATH = "com.example.tiniha.karaoke/databases/";
+    private static final String DB_NAME = "V49.sqlite";
     private SQLiteDatabase myDataBase;
     private Context myContext = null;
 
