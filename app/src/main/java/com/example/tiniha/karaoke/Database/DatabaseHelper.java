@@ -8,6 +8,10 @@ import android.system.ErrnoException;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Created by Tini Ha on 10/7/2016.
@@ -42,18 +46,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
     }
+    private void copyDataBase(){
+        try {
+
+            InputStream mInputStream = context.getAssets().open(DATABASE_NAME);
+            String outFileName = duonganDB + DATABASE_NAME;
+            OutputStream mOutputStream = new FileOutputStream(outFileName);
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = mInputStream.read(buffer)) > 0) {
+                mOutputStream.write(buffer, 0, length);
+            }
+            mOutputStream.flush();
+            mOutputStream.close();
+            mInputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public SQLiteDatabase openDatabase(){
         return SQLiteDatabase.openDatabase(duonganDB,null,SQLiteDatabase.OPEN_READWRITE);
     }
 
-    public void createDatabase()
-    {
+    public void createDatabase(){
         boolean kt=kiemtraDB();
         if (kt){
-            Log.d("ket noi","chua co DB");
+            Log.d("ket noi","Da co DB");
         }else {
-            Log.d("ketnoi","co DB");
+            Log.d("ketnoi","Chua co DB");
             this.getWritableDatabase();
+            copyDataBase();
         }
     }
 
