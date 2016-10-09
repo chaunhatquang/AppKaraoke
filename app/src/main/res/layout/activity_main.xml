@@ -3,79 +3,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.tiniha.karaoke.MainActivity">
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-      android:background="#FFF895B7"
-    android:gravity="center"
-    android:orientation="vertical">
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Tìm Bài Hát"
-          android:textStyle="bold"
-          android:textSize="30dp"
-          android:textColor="#000000"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:layout_marginBottom="15dp"/>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+        android:background="#FFF895B7"
+      android:gravity="center"
+      android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tìm Bài Hát"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginBottom="15dp"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/logo">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/logo"
+            android:id="@+id/imageView">
 
-    </ImageView>
-
-
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:background="#10000000"
-          android:gravity="center"
-          android:padding="15dp">
-
-          <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
-
-              <Button
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:clickable="true"
-                  android:background="#FFF56194"
-                  android:drawablePadding="20dp"
-                  android:foreground="?android:attr/selectableItemBackground"
-                  android:padding="20dp"
-                  android:text="Signin with facebook"
-                  android:id="@+id/btnfacebook"
-                  android:textAppearance="?android:attr/textAppearanceMedium"
-                  android:textColor="#000000"
-                  android:layout_marginBottom="10dp"
-                  android:textSize="30sp" />
-
-              <Button
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:drawablePadding="20dp"
-                  android:foreground="?android:attr/selectableItemBackground"
-                  android:padding="20dp"
-                  android:id="@+id/btngmail"
-                  android:background="#FFF56194"
-                  android:text="Signin with gmail"
-                  android:textAppearance="?android:attr/textAppearanceMedium"
-                  android:textColor="#000000"
-                  android:textSize="30sp" />
-          </LinearLayout>
-      </LinearLayout>
+        </ImageView>
 
 
-  </LinearLayout>
+        <LinearLayout
+            android:layout_width="309dp"
+            android:layout_height="89dp"
+            android:background="#10000000"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_weight="0.11">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <com.facebook.login.widget.LoginButton
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/com_facebook_button_background"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#f16293"
+                    android:id="@+id/btnfacebook"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/com_facebook_button_background"
+                    android:backgroundTint="#f16293"
+                    android:id="@+id/btngmail"
+                    android:text="Login with gmail"
+                    android:layout_weight="0.40"
+                    android:textAllCaps="false"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

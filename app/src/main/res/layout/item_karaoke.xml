@@ -2,27 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF895B7"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
         android:background="#FFF56194">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtCode"
         android:padding="10dp"
         android:text="Code number"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#c6200e"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
+        android:textColor="#0d37f1"/>
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -40,6 +37,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
