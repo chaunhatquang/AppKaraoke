@@ -18,22 +18,15 @@ public class SQLDataSource  {
     public  SQLDataSource(Context context){
         helper=new DatabaseHelper(context);
         helper.createDatabase();
-        db= helper.openDatabase();
+        helper.openDatabase();
     }
 
     public List<KaraokeModel> ListSong() {
-        List<KaraokeModel> list = new ArrayList<KaraokeModel>();
-        String[] column = {DatabaseHelper.ROWID, DatabaseHelper.NAME_VN, DatabaseHelper.AUTHOR_INFO, DatabaseHelper.LYRIC_VN};
-        Cursor c = db.query(DatabaseHelper.TABLE_SONG, column, null, null, null, null,null);
+        List<KaraokeModel> list = new ArrayList<>();
+        Cursor c = db.rawQuery("SELECT * FROM KARAOKE_VN",null);
         c.moveToFirst();
         while (!c.isAfterLast()){
-            KaraokeModel item=new KaraokeModel();
-            item.set_code(c.getInt(0));
-            item.set_name_vn(c.getString(1));
-            item.setAnthor_info(c.getString(2));
-            item.setLyric_vn(c.getString(3));
-
-
+            KaraokeModel item = new KaraokeModel(c.getString(0),c.getString(3),c.getString(5),c.getString(6));
             list.add(item);
             c.moveToNext();
         }

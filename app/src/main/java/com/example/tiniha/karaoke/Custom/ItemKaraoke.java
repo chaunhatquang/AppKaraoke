@@ -28,18 +28,18 @@ public class ItemKaraoke extends ArrayAdapter<KaraokeModel> {
     public  ItemKaraoke(Context context, int resource,List<KaraokeModel> objects){
         super(context,resource,objects);
 
-        this.context=context;
-        this.resource=resource;
-        this.objects=objects;
+        this.context = context;
+        this.resource = resource;
+        this.objects = objects;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view=View.inflate(context,resource,null);
-        TextView tvid=(TextView) view.findViewById(R.id.txtCode);
-        TextView tvsongname=(TextView) view.findViewById(R.id.txtSongName);
-        TextView tvcomposer=(TextView) view.findViewById(R.id.txtComposer);
-        TextView tvlyric=(TextView) view.findViewById(R.id.txtlyric);
+        View view = View.inflate(context,resource,null);
+        TextView tvid = (TextView) view.findViewById(R.id.txtCode);
+        TextView tvsongname = (TextView) view.findViewById(R.id.txtSongName);
+        TextView tvcomposer = (TextView) view.findViewById(R.id.txtComposer);
+        TextView tvlyric = (TextView) view.findViewById(R.id.txtlyric);
 
 
         KaraokeModel item=objects.get(position);

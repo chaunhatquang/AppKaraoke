@@ -5,7 +5,7 @@ package com.example.tiniha.karaoke;
  */
 
 public class KaraokeModel {
-    private int _code;
+    private String _code;
     private String short_name;
     private String _name;
     private String _name_vn;
@@ -13,25 +13,18 @@ public class KaraokeModel {
     private String lyric_vn;
     private String anthor_info;
 
-
-
-
-
-    public KaraokeModel() {
+    public KaraokeModel(String _code, String _name_vn, String lyric_vn, String anthor_info) {
         this._code = _code;
-        this.short_name = short_name;
-        this._name = _name;
         this._name_vn = _name_vn;
-        this.lyric = lyric;
         this.lyric_vn = lyric_vn;
-        this.anthor_info=anthor_info;
+        this.anthor_info = anthor_info;
     }
 
-    public int get_code() {
+    public String get_code() {
         return _code;
     }
 
-    public void set_code(int _code) {
+    public void set_code(String _code) {
         this._code = _code;
     }
 

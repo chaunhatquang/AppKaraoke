@@ -34,14 +34,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private LoginButton facebookButton;
     private CallbackManager callbackManager;
 
-    SQLDataSource db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
-
-        db=new SQLDataSource(this);
 
         callbackManager = CallbackManager.Factory.create();
         facebookButton = (LoginButton)findViewById(R.id.btnfacebook);
@@ -56,8 +53,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         gmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-                startActivityForResult(signInIntent, RC_SIGN_IN);
+               // Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+               // startActivityForResult(signInIntent, RC_SIGN_IN);
+                startActivity(new Intent(MainActivity.this,HomeActivity.class));
             }
             });
 
